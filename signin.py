@@ -13,7 +13,7 @@ def signin_user():
         
 
         if not request.data.strip():
-            return jsonify({'message': 'phone and password are required'})
+            return jsonify({'message': 'phone and password are required'}), 400
         
         data = request.json
         phone = str(data.get('phone')) if data.get('phone') else None
